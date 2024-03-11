@@ -1,0 +1,50 @@
+{
+    "userDetails": {
+        "UserId": "shivam121",
+        "Name": "shivam",
+        "Password": "12345678",
+        "Number": "991092999",
+        "Location": "delhi",
+        "otherDetails": "nothing"
+    },
+    "PropertyDetails": {
+        "details": {
+            "detailId": "shivam121_1",
+            "Uid2": "",
+            "state": "",
+            "city": "",
+            "area": "",
+            "pinCode": null,
+            "sector": "",
+            "name": "",
+            "developerName": "",
+            "categories": "",
+            "sub_categories": "",
+            "eLoc": "",
+            "lng": null,
+            "lat": null,
+            "mapBound": [
+                [],
+                []
+            ],
+            "mapHeading": null,
+            "code": "XYZ123",
+            "mapPitch": null,
+            "mapZoom": null,
+            "labelInfoBoard": []
+        },
+        "mediaDetails": {
+            "mediaId": "shivam121_1",
+            "model": "",
+            "Image": [],
+            "video": [],
+            "Boundary": [
+                [],
+                []
+            ],
+            "boundaryColor": "",
+            "realViewTripId": "",
+            "IndoorRealViewTripId": ""
+        }
+    }
+}

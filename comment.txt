@@ -1,0 +1,361 @@
+////////////////////////////////
+const userDetailsSchema = new mongoose.Schema({
+  Name: String,
+  UserId: String,
+  Password: String,
+  Number: String,
+  Location: String,
+  otherDetails: String,
+},{strict:false,collection:"datas"});
+
+const OtherDataSchema = new mongoose.Schema({
+  state: String,
+  city: String,
+  area: String,
+  pinCode: Number,
+},{strict:false,collection:"datas"});
+const dataSchema =new mongoose.Schema({
+  userDetails: userDetailsSchema,
+  otherData: OtherDataSchema
+},{strict:false,collection:"datas"});
+
+const DataModel = mongoose.model("Datas", dataSchema);
+//////////////////////////
+response
+{
+    "userDetails": {
+        "Name": "Shivam jha",
+        "UserId": "1234",
+        "Password": "shivan Jha",
+        "Number": "9910929659",
+        "Location": "delhi",
+        "otherDetails": "nothing",
+        "_id": "6593eb9d05d6091ed2981dc3"
+    },
+    "otherData": {
+        "state": "Delhi",
+        "city": "New Delhi",
+        "area": "okhla",
+        "_id": "6593eb9d05d6091ed2981dc4",
+        "pincode": 110092
+    },
+    "_id": "6593eb9d05d6091ed2981dc2",
+    "__v": 0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////Full response
+{
+    "userDetails": {
+        "Name": "Shivam jha",
+        "UserId": "1234",
+        "Password": "shivan Jha",
+        "Number": "9910929659",
+        "Location": "delhi",
+        "otherDetails": "nothing"
+    },
+    
+      "PropertyDetails": [
+        {
+            "propertyId": 123,
+            "Uid2": "abc123",
+            "mediaDetails": {
+                "model": "ModelXYZ",
+                "Image": [
+                    "image1.jpg",
+                    "image2.jpg"
+                ],
+                "video": [
+                    "video1.mp4",
+                    "video2.mp4"
+                ],
+                "Boundary": [
+                    [
+                        1.23,
+                        4.56
+                    ],
+                    [
+                        7.89,
+                        10.11
+                    ]
+                ],
+                "boundaryColor": "red",
+                "realViewTripId": "Trip123",
+                "IndoorRealViewTripId": "Trip123_ProjectABC"
+            },
+            "state": "California",
+            "city": "San Francisco",
+            "area": "Downtown",
+            "pinCode": 94105,
+            "sector": "Tech",
+            "name": "Luxury Apartments",
+            "developerName": "ABC Developers",
+            "categories": "Residential",
+            "sub_categories": "Apartment",
+            "eLoc": "6BWGE7",
+            "lng": -122.4194,
+            "lat": 37.7749,
+            "mapBound": [
+                [
+                    -122.421,
+                    37.776
+                ],
+                [
+                    -122.416,
+                    37.772
+                ]
+            ],
+            "mapHeading": 90,
+            "code": "XYZ123",
+            "mapPitch": 45,
+            "mapZoom": 15,
+            "labelInfoBoard": [
+                {
+                    "lng": -122.418,
+                    "lat": 37.775,
+                    "name": "InfoBoard1"
+                },
+                {
+                    "lng": -122.416,
+                    "lat": 37.773,
+                    "name": "InfoBoard2"
+                }
+            ]
+        }
+        
+        ]
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////
+ // console.log(userImg,userVideo);
+
+  // if (
+  //   req.body.PropertyDetails.mediaDetails.Image.length == 0 ||
+  //   req.body.PropertyDetails.mediaDetails.video.length == 0 ||
+  //   req.body.PropertyDetails.mediaDetails.video.length < userVideo.length ||
+  //   req.body.PropertyDetails.mediaDetails.Image.length < userImg.length
+  // ) {
+  //   try {
+  //     const data = await DataModel.findOneAndUpdate(
+  //       { "userDetails.UserId": req.params.userId },
+  //       {
+  //         $addToSet: {
+  //           "PropertyDetails.mediaDetails.Image": { $each: userImg },
+  //           "PropertyDetails.mediaDetails.video": { $each: userVideo },
+  //           // "otherData.mediaDetails.model": {$each:modelFullPath},
+  //         },
+  //       },
+  //       { new: true }
+  //     );
+  //     res.status(200).json(data);
+  //   } catch (error) {
+  //     res.send(error);
+  //   }
+  // } else {
+  //   try {
+  //     const data = await DataModel.findOneAndUpdate(
+  //       { "userDetails.UserId": req.params.userId },
+  //       {
+  //         $set: req.body,
+  //       },
+  //       { new: true }
+  //     );
+  //     res.status(200).json(data);
+  //   } catch (error) {
+  //     res.send(error);
+  //   }
+  // }
+
+
+
+  /////////////////////////////////////////////////////
+
+  const currentModuleURL = import.meta.url;
+
+console.log("🚀 ~ file: pathFinder.js:28 ~ currentModuleURL:", currentModuleURL)
+
+
+//🚀 ~ file: pathFinder.js:28 ~ currentModuleURL: file:///home/cn003808/Desktop/api/middleware/pathFinder.js
+
+
+
+const currentModuleDir = new URL('../', currentModuleURL).pathname;
+
+console.log("🚀 ~ file: pathFinder.js:30 ~ currentModuleDi:", currentModuleDir)
+
+// currentModuleDi: /home/cn003808/Desktop/api/
+
+
+const relativeFilePath = './public/imgs/';
+
+const absoluteFilePath = resolve(currentModuleDir, relativeFilePath);
+
+console.log("🚀 ~ file: pathFinder.js:32 ~ absoluteFilePath:", absoluteFilePath)
+
+
+// absoluteFilePath: /home/cn003808/Desktop/api/public/imgs
+
+
+
+
+./////////////////////////////////////////////////////////////////////////////////////////
+
+
+   // try {
+    //   const img=imgsPath[0]   
+    //     console.log(img)
+    //     res.download(img)
+         
+        
+    // } catch (error) {
+    //     // Handle errors by sending an appropriate response
+    //     console.error("Error:", error);
+    //     res.status(500).send("Internal Server Error");
+    // }
+    try{
+        const img=await fs.readFile('./public/imgs/abc123_img1.png');
+        res.send(img)
+        console.log(img)
+
+
+    }catch{
+        res.send("File not found")
+
+    }
+
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    import DataModel from "../model/data.model.js";
+import path from "path";
+
+const currentModuleDir = new URL("../", import.meta.url).pathname;
+
+async function uploadMedia(req, res) {
+  try {
+    const filePaths = req.files.map((file) => file.path);
+    const userFile = filePaths.filter((items) =>
+      items.includes(req.params.userId)
+    );
+    let userImg = userFile.filter((items) => items.includes("imgs"));
+    let userVideo = userFile.filter((items) => items.includes("videos"));
+    let userModel = userFile.filter((items) => items.includes("model"));
+
+    // Join current directory path before full paths
+    const joinCurrentDir = (files) =>
+      files.map((file) => path.join(currentModuleDir, file));
+
+    // Apply the function to userImg and userVideo
+    userImg = joinCurrentDir(userImg);
+    userVideo = joinCurrentDir(userVideo);
+
+    //find user id
+    // const fullId = req.params.userId;
+    // const userId =fullId.split('_')[0]
+    // const popertyNo =fullId.split('_')[1]
+    // console.log(id)
+          
+   const userId=req.query.UserId
+    const user =( await DataModel.findOne({
+      "userDetails.UserId": userId,
+    })).toJSON();
+    // const propertId=req.query.propertyId
+    // if(propertId){
+    //   user.Property[0].propertyId=propertId
+    //   console.log(true)
+    // }else{
+    //   console.log('false')
+    // }
+
+    if(user){
+      const property=user.Property
+      const checkProperty=property.filter((item)=>item.propertyId==req.query.propertyId)
+      console.log(checkProperty)
+      const data = await DataModel.findOneAndUpdate(
+            { "userDetails.UserId": userId },
+            {
+              $addToSet: {
+                [`${checkProperty[0]}.mediaDetails.img`]: { $each: userImg },
+                // [`Property.property${property[0].propertyId}.mediaDetails.video`]: { $each: userVideo },
+                // [`Property.property${property[0].propertyId}.mediaDetails.model`]: { $each: userModel },
+              },
+            }
+           
+          ).exec();
+            
+          res.status(200).json(data);
+    }
+
+
+
+    // if (user) {
+    //   const data = await DataModel.findOneAndUpdate(
+    //     { "userDetails.UserId": userId },
+    //     {
+    //       $addToSet: {
+    //         [`Property.mediaDetails.Image`]: { $each: userImg   },
+    //         [`Property.property${popertyNo}.mediaDetails.video`]: { $each: userVideo },
+    //         [`Property.property${popertyNo}.mediaDetails.model`]: { $each: userModel },
+    //       },
+    //     },
+    //     { new: true }
+    //   ).exec();
+
+    //   res.status(200).json(data);
+    // } else {
+    //   res.status(404).json({ message: "User not found" });
+    // }
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Internal Server Error", error: error.message });
+  }
+}
+
+export default uploadMedia;
+
+
+
+    // if (user) {
+    //   const data = await DataModel.findOneAndUpdate(
+    //     { "userDetails.UserId": userId },
+    //     {
+    //       $addToSet: {
+    //         [`Property.mediaDetails.Image`]: { $each: userImg   },
+    //         [`Property.property${popertyNo}.mediaDetails.video`]: { $each: userVideo },
+    //         [`Property.property${popertyNo}.mediaDetails.model`]: { $each: userModel },
+    //       },
+    //     },
+    //     { new: true }
+    //   ).exec();
+
+    //   res.status(200).json(data);
+    // } else {
+    //   res.status(404).json({ message: "User not found" });
+    // }
